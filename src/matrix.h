@@ -85,13 +85,28 @@ namespace bla
     }
 
     template <typename T, ORDERING ORD>
-    Vector<T> operator*(const Matrix<T, ORD> & a, const Vector<T> & v)
+    Vector<T> operator*(const Matrix<T, ORD>& a, const Vector<T>& v)
     {
         Vector<T> result(a.Rows());
         for (size_t i = 0; i < a.Rows(); i++) {
             result(i) = 0;
             for (size_t j = 0; j < a.Rows(); j++) {
                 result(i) += a(i, j) * v(j);
+            }
+        }
+        return result;
+    }
+
+    template <typename T, ORDERING ORD>
+    Matrix<T, ORD> operator*(const Matrix<T, ORD>& a, const Matrix<T, ORD>& b)
+    {
+        Matrix<T, ORD> result(a.Rows(), b.Columns());
+        for (size_t i = 0; i < a.Rows(); i++) {
+            for (size_t j = 0; j < b.Columns(); j++) {
+                result(i, j) = 0;
+                for (size_t k = 0; k < a.Columns(); ++k) {
+                    result(i, j) += a(i, k) * b(k, j);
+                }
             }
         }
         return result;
