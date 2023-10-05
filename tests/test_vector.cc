@@ -48,6 +48,11 @@ int main()
   auto mmProduct = A * B;
 
   std::cout << mmProduct <<  std::endl;
+
+  bla::Matrix<double, bla::RowMajor> M(3, 4);
+  bla::Matrix<double, bla::RowMajor> M2 = M.transpose();
+  print(M2);
+
 }
 
 
