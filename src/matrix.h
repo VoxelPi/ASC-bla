@@ -68,6 +68,17 @@ namespace bla
                 return data_[column + row * columns_];
             }
         }
+
+        Matrix transpose () {
+            Matrix Mt (this->columns_, this->rows_);
+            for (size_t i = 0, i < this->rows_, i++) {
+                for (size_t = j = 0, j < this->columns_,j++) {
+                    Mt(j, i) = (*this)(i, j);
+                }
+            }
+            return Mt
+        }
+
     };
 }
 

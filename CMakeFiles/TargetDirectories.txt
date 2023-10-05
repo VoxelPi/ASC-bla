@@ -1,0 +1,5 @@
+/Users/miabirkhan/Desktop/TU/3.Semester/Einführung in Scientific Computing/ASC-bla/CMakeFiles/edit_cache.dir
+/Users/miabirkhan/Desktop/TU/3.Semester/Einführung in Scientific Computing/ASC-bla/CMakeFiles/rebuild_cache.dir
+/Users/miabirkhan/Desktop/TU/3.Semester/Einführung in Scientific Computing/ASC-bla/tests/CMakeFiles/test_vector.dir
+/Users/miabirkhan/Desktop/TU/3.Semester/Einführung in Scientific Computing/ASC-bla/tests/CMakeFiles/edit_cache.dir
+/Users/miabirkhan/Desktop/TU/3.Semester/Einführung in Scientific Computing/ASC-bla/tests/CMakeFiles/rebuild_cache.dir
