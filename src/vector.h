@@ -51,12 +51,14 @@ namespace bla
   };
 
 
-  template <typename T>
-  Vector<T> operator+ (const Vector<T> & a, const Vector<T> & b)
+  template <typename TA, typename TB>
+  auto operator+(const Vector<TA>& a, const Vector<TB>& b)
   {
-    Vector<T> sum(a.Size());
+    typedef decltype(std::declval<TA>()+std::declval<TB>()) TRES;
+
+    Vector<TRES> sum(a.Size());
     for (size_t i = 0; i < a.Size(); i++)
-      sum(i) = a(i)+b(i);
+      sum(i) = a(i) + b(i);
     return sum;
   }
   
