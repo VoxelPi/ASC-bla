@@ -74,12 +74,12 @@ namespace bla
 
         Matrix transpose () {
             Matrix Mt (this->columns_, this->rows_);
-            for (size_t i = 0, i < this->rows_, i++) {
-                for (size_t = j = 0, j < this->columns_,j++) {
+            for (size_t i = 0; i < this->rows_; i++) {
+                for (size_t j = 0; j < this->columns_; j++) {
                     Mt(j, i) = (*this)(i, j);
                 }
             }
-            return Mt
+            return Mt;
         }
 
     };

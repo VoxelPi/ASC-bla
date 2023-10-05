@@ -51,7 +51,7 @@ int main()
 
   bla::Matrix<double, bla::RowMajor> M(3, 4);
   bla::Matrix<double, bla::RowMajor> M2 = M.transpose();
-  print(M2);
+  std::cout << M2 <<  std::endl;
 
 }
 
