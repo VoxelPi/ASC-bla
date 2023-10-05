@@ -1,6 +1,8 @@
 #ifndef FILE_MATRIX_H
 #define FILE_MATRIX_H
 
+#include <vector.h>
+
 namespace bla
 {
     enum ORDERING { ColMajor, RowMajor };
@@ -69,6 +71,18 @@ namespace bla
             }
         }
     };
+
+    template <typename T, ORDERING ORD>
+    Matrix<T, ORD> operator+ (const Matrix<T, ORD> & a, const Matrix<T, ORD> & b)
+    {
+        Matrix<T, ORD> sum(a.Rows(), a.Columns());
+        for (size_t i = 0; i < a.Rows(); i++) {
+            for (size_t j = 0; j < a.Rows(); j++) {
+                sum(i, j) = a(i, j) + b(i, j);
+            }
+        }
+        return sum;
+    }
 }
 
 #endif
