@@ -73,7 +73,7 @@ namespace bla
     };
 
     template <typename T, ORDERING ORD>
-    Matrix<T, ORD> operator+ (const Matrix<T, ORD> & a, const Matrix<T, ORD> & b)
+    Matrix<T, ORD> operator+(const Matrix<T, ORD> & a, const Matrix<T, ORD> & b)
     {
         Matrix<T, ORD> sum(a.Rows(), a.Columns());
         for (size_t i = 0; i < a.Rows(); i++) {
@@ -82,6 +82,19 @@ namespace bla
             }
         }
         return sum;
+    }
+
+    template <typename T, ORDERING ORD>
+    Vector<T> operator*(const Matrix<T, ORD> & a, const Vector<T> & v)
+    {
+        Vector<T> result(a.Rows());
+        for (size_t i = 0; i < a.Rows(); i++) {
+            result(i) = 0;
+            for (size_t j = 0; j < a.Rows(); j++) {
+                result(i) += a(i, j) * v(j);
+            }
+        }
+        return result;
     }
 }
 
