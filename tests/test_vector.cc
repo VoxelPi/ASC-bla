@@ -20,6 +20,11 @@ int main()
   bla::Vector<double> z = x+y;
   
   std::cout << "x+y = " << z << std::endl;
+
+  bla::Matrix<double, bla::RowMajor> M(3, 4);
+  bla::Matrix<double, bla::RowMajor> M2 = M.transpose();
+  print(M2)
+
 }
 
 
