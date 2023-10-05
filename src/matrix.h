@@ -1,6 +1,7 @@
 #ifndef FILE_MATRIX_H
 #define FILE_MATRIX_H
 
+#include <iostream>
 #include <vector.h>
 
 namespace bla
@@ -90,7 +91,7 @@ namespace bla
         Vector<T> result(a.Rows());
         for (size_t i = 0; i < a.Rows(); i++) {
             result(i) = 0;
-            for (size_t j = 0; j < a.Rows(); j++) {
+            for (size_t j = 0; j < a.Columns(); j++) {
                 result(i) += a(i, j) * v(j);
             }
         }
@@ -110,6 +111,20 @@ namespace bla
             }
         }
         return result;
+    }
+  
+    template <typename T, ORDERING ORD>
+    std::ostream& operator<<(std::ostream& ost, const Matrix<T, ORD>& m)
+    {
+        for (size_t i = 0; i < m.Rows(); i++) {
+            if (m.Columns() > 0) {
+                ost << std::endl << m(i, 0);
+            }
+            for (size_t j = 1; j < m.Columns(); j++) {
+                ost << ", " << m(i, j);
+            }
+        }
+        return ost;
     }
 }
 
